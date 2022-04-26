@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:intl/intl.dart';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -33,7 +34,7 @@ class WorldTime {
       //print(now);
 
       // Set the time property
-      time = now.toString();
+      time = DateFormat.jm().format(now);
     }
     catch(e) {
         print('Error caught: ---$e---');

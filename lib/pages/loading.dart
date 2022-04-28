@@ -14,6 +14,7 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
 
   String time = 'Loading ...';
+  static WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
 
   // void getData() async {
   //   final response = await http.get(Uri.parse('http://jsonplaceholder.typicode.com/todos/1'));
@@ -39,7 +40,6 @@ class _LoadingState extends State<Loading> {
 
   Future<void> setupWorldTime() async
   {
-    WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
     await instance.getTime();
     // print('Hey: '+instance.time);
     setState(() {
@@ -49,6 +49,7 @@ class _LoadingState extends State<Loading> {
         arguments: {'location': instance.location,
                     'flag': instance.flag,
                     'time': instance.time,
+                    'isDaytime': instance.isDaytime,
                     'label': 'New label returned !',
                     }
         );

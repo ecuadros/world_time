@@ -6,7 +6,7 @@ import 'package:world_time/pages/loading.dart';
 void main() {
   runApp(MaterialApp(
     // home: Home(),
-    // home: ChooseLocation(),
+    //home: ChooseLocation(),
     initialRoute: '/',
     routes: {
         '/': (context)         => const Loading(),
